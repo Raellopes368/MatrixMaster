@@ -87,6 +87,7 @@ function Main({ history }) {
             Para começar usar
             é bem simples, clique sobre a operação desejada no menú ao lado, e será
             redirecionado para fazer as operações.
+
           </p>
 
 
