@@ -36,6 +36,7 @@ function Operation({
       console.log({ matrix1, matrix2 });
 
       if (matrix1.length && matrix2.length) {
+        console.log(option, option === 'sum');
         if (option === 'sum') {
           const resultAll = sum(matrix1, matrix2);
           console.log(resultAll);
