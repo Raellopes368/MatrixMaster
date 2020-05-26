@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.container-operation{
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  padding: 10px;
+  font-family: Roboto, sans-serif;
+}
+
+.container-operation .title{
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.back{
+  margin-left: 10px;
+  width: 100px;
+}
+
+.row{
+  width: 60px;
+  height: 30px;
+  padding: 3px;
+  border-radius: 3px;
+  margin: 3px;
+  border: thin solid rgb(207, 63, 37);
+}
+
+input::placeholder{
+  font-size: 14px;
+}
+
+.column{
+  width: 60px;
+  height: 30px;
+  padding: 3px;
+  border-radius: 3px;
+  margin: 3px;
+  border: thin solid rgb(207, 63, 37);
+}
+
+button{
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  background-color: rgb(207, 63, 37);
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button:hover{
+  background-color: rgb(175, 51, 29);
+}
+
+.info{
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 200px) and (max-width: 481px) {
+  .logo img{
+    width: 220px;
+  }
+ 
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .logo img{
+    width: 250px;
+  }
+ 
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  
+  .logo img{
+    width: 220px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  .logo img{
+    width: 310px;
+  }
+  
+}
+
+.logo img{
+  top: 0;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
