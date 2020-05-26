@@ -89,26 +89,28 @@ function Operation({
           setError2('Matriz inválida!');
         }
       },
-      mult: () => {
-        if (column1 !== row2) setError2('Para a operação multiplicação, o número de colunas da primeira matriz, deve ser igual ao número de linhas da segunda');
-        else if (row2 > 0 && row2 <= 5 && column2 > 0 && column2 <= 5) {
-          setError2(false);
-          setRelease2(true);
-        } else { setError2('Matriz inválida!'); }
-      },
-      div: () => {
-        if (row1 !== row2 && column1 !== column2) setError2('Para a operação subtração, as matrizes devem ser do mesmo tipo!');
-        else if (row2 > 0 && row2 <= 5 && column2 > 0 && column2 <= 5) {
-          setError2(false);
-          setRelease2(true);
-        } else { setError2('Matriz inválida!'); }
+      multi: () => {
+        if ((row2 > 0 && row2 <= 5 && column2 > 0 && column2 <= 5)) {
+          if (column1 === row2) {
+            setError2(false);
+            setRelease2(true);
+          } else {
+            setRelease2(false);
+            setError2('Para a operação soma, as matrizes devem ser do mesmo tipo!');
+          }
+        } else {
+          setRelease2(false);
+          setError2('Matriz inválida!');
+        }
       },
       det: () => {
-        if (row1 !== row2 && column1 !== column2) setError2('Para a operação subtração, as matrizes devem ser do mesmo tipo!');
-        else if (row2 > 0 && row2 <= 5 && column2 > 0 && column2 <= 5) {
+        if ((row2 > 0 && row2 <= 5 && column2 > 0 && column2 <= 5)) {
           setError2(false);
           setRelease2(true);
-        } else { setError2('Matriz inválida!'); }
+        } else {
+          setRelease2(false);
+          setError2('Matriz inválida!');
+        }
       },
     };
     return operations[option];
