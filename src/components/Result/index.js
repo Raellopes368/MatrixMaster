@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 import './styles.css';
 
 
-function Result({
-  matrix,
-}) {
+function Result({ matrix }) {
   function RenderMatrix() {
     return (
 
@@ -17,8 +15,12 @@ function Result({
           {matrix.map((columns, ind) => (
             <div className="container-columns" key={ind}>
               {columns.map((col, index) => (
-                // <input className="column" key={index}>{col} >
-                <input type="text" className="column" readOnly value={col} key={index} />
+                <div>
+                  {/* // <input className="column" key={index}>{col} > */}
+                  <input type="text" className="column" readOnly value={col} key={index} />
+
+                  {console.log(col)}
+                </div>
               ))}
             </div>
           ))}
