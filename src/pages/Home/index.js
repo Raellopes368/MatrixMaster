@@ -16,7 +16,6 @@ function Main({ history }) {
   function to(route) {
     const options = {
       sum: () => {
-        console.log(logo);
         history.push('/sum');
       },
       subtraction: () => {

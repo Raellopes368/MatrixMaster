@@ -21,7 +21,6 @@ function reducer(state = INITIAL_INFORMATIONS, dispatch) {
     default: INITIAL_INFORMATIONS,
   };
 
-  console.log(reducers[dispatch.type] || reducers.default);
   return reducers[dispatch.type] || reducers.default;
 }
 

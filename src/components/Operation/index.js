@@ -33,15 +33,10 @@ function Operation({
       const matrix1 = generateMatrix(store.matrix1);
       const matrix2 = generateMatrix(store.matrix2);
 
-      console.log({ matrix1, matrix2 });
 
       if (matrix1.length && matrix2.length) {
-        console.log(option, option === 'sum');
         if (option === 'sum') {
-          console.log('Tah chegando aqui');
           const resultAll = sum(matrix1, matrix2);
-          console.log('Soma');
-          console.log(resultAll);
           setResult(resultAll);
         }
         if (option === 'sub') {
@@ -238,6 +233,7 @@ function Operation({
           {option !== 'det' ? (
             <div>
               Resultado
+              {console.log(result)}
               <Result matrix={result} />
             </div>
           ) : (
