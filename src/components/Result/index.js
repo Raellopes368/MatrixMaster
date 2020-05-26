@@ -12,17 +12,15 @@ function Result({ matrix }) {
         <form className="container-rows">
           <div className="left" />
           {matrix.map((columns, ind) => (
-            <div className="container-columns" key={ind}>
-              {columns.map((col, index) => (
-                <div>
-                  {/* // <input className="column" key={index}>{col} > */}
+            <div className="teste">
+              <div className="container-columns" key={ind}>
+                {columns.map((col, index) => (
                   <input type="text" className="column" readOnly value={col} key={index} />
-                  {' '}
-                  {console.log(col)}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           ))}
+
           <div className="right" />
 
         </form>
