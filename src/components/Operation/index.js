@@ -96,7 +96,7 @@ function Operation({
             setRelease2(true);
           } else {
             setRelease2(false);
-            setError2('Para a operação soma, as matrizes devem ser do mesmo tipo!');
+            setError2('Para a operação multiplicação, o numero de colunas da matriz A deve ser igual ao número de linhas que a matriz B');
           }
         } else {
           setRelease2(false);
@@ -181,7 +181,7 @@ function Operation({
           </div>
 
 
-          <button type="button" onClick={renderMatrix1}>gerar matriz 1</button>
+          <button type="button" onClick={renderMatrix1}>gerar matriz A</button>
           {error1 && <div className="error">Matriz inválida</div>}
 
           {release1 && <Matrix rows={row1} columns={column1} sequence="first" />}
@@ -215,7 +215,7 @@ function Operation({
             </div>
 
 
-            <button type="button" onClick={renderMatrix2}>gerar matriz 2</button>
+            <button type="button" onClick={renderMatrix2}>gerar matriz B</button>
 
             {error2 && <div className="error">{error2}</div>}
 
