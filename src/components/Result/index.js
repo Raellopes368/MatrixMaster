@@ -17,7 +17,7 @@ function Result({ matrix }) {
                 <div>
                   {/* // <input className="column" key={index}>{col} > */}
                   <input type="text" className="column" readOnly value={col} key={index} />
-
+                  {col}
                   {console.log(col)}
                 </div>
               ))}
