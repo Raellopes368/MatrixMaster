@@ -20,6 +20,7 @@ function Matrix({
       const matrix = {};
       function dispatchMatrix() {
         if (matrix[`${rows.length}x${columns.length}`]) {
+          console.log('onBlur');
           if (sequence === 'first') {
             dispatch({
               type: 'matrix1',
