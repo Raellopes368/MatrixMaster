@@ -26,13 +26,14 @@ function Operation({
   const [error1, setError1] = useState(false);
   const [error2, setError2] = useState(false);
   const [result, setResult] = useState(false);
+  const [calc, setCalc] = useState(false);
 
 
   function calculate() {
     if (option !== 'det') {
       const matrix1 = generateMatrix(store.matrix1);
       const matrix2 = generateMatrix(store.matrix2);
-
+      setCalc(true);
 
       if (matrix1.length && matrix2.length) {
         if (option === 'sum') {
@@ -225,21 +226,13 @@ function Operation({
           <button type="button" onClick={calculate}>Calcular</button>
 
         </div>
-
+        {calc && (<div> Resultado</div>)}
         { result && (
         <div>
-
-          {' '}
           {option !== 'det' ? (
-            <div>
-              Resultado
-              {console.log(result)}
-              <Result matrix={result} />
-            </div>
+            <Result matrix={result} />
           ) : (
             <div className="result">
-              Resultado
-              {' '}
               {result}
             </div>
           )}
