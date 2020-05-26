@@ -44,7 +44,7 @@ function Operation({
           const resultAll = sub(matrix1, matrix2);
           setResult(resultAll);
         }
-        if (option === 'mult') {
+        if (option === 'multi') {
           const resultAll = mult(matrix1, matrix2);
           setResult(resultAll);
         }
