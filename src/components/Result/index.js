@@ -9,7 +9,6 @@ function Result({ matrix }) {
     return (
 
       <div className="container-all">
-        {console.log(matrix)}
         <form className="container-rows">
           <div className="left" />
           {matrix.map((columns, ind) => (
