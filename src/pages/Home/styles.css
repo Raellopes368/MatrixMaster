@@ -63,6 +63,7 @@
   .info-app .text{
     padding: 0 280px;
     font-size: 18pt;
+    margin-left: 20px;
   }
   
 }
@@ -73,10 +74,12 @@
   }
   .logo{
     width: 900px;
+    margin-left: 100px;
   }
   .info-app .text{
     padding: 0 300px;
     font-size: 18pt;
+    margin-left: 100px;
   }
   
 }

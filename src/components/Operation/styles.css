@@ -68,6 +68,37 @@ button:hover{
   align-items: center;
 }
 
+.btns{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.error{
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(253, 19, 19);
+}
+
+.result-all{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.result{
+  margin-left: 5px;
+}
+
+
+.btns .btn{
+  margin-left: 10px;
+  width: 160px;
+}
+
 .container-info{
   display: flex;
   flex-direction: column;

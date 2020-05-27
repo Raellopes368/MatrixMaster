@@ -28,24 +28,43 @@ function Operation({
   const [result, setResult] = useState(false);
   const [calc, setCalc] = useState(false);
 
+  function clear() {
+    setResult(false);
+    setCalc(false);
+    setRow1(0);
+    setRow2(0);
+    setColumn1(0);
+    setColumn2(0);
+    setRelease1(false);
+    setRelease2(false);
+    setError1(false);
+    setError2(false);
+    dispatch({
+      type: 'default',
+    });
+  }
+
 
   function calculate() {
     if (option !== 'det') {
       const matrix1 = generateMatrix(store.matrix1);
       const matrix2 = generateMatrix(store.matrix2);
-      setCalc(true);
+
 
       if (matrix1.length && matrix2.length) {
         if (option === 'sum') {
           const resultAll = sum(matrix1, matrix2);
+          setCalc(true);
           setResult(resultAll);
         }
         if (option === 'sub') {
           const resultAll = sub(matrix1, matrix2);
+          setCalc(true);
           setResult(resultAll);
         }
         if (option === 'multi') {
           const resultAll = mult(matrix1, matrix2);
+          setCalc(true);
           setResult(resultAll);
         }
       }
@@ -54,7 +73,7 @@ function Operation({
 
       if (matrix1.length) {
         const resultAll = det(matrix1);
-        // console.log('Show');
+        setCalc(true);
         setResult(resultAll);
       }
     }
@@ -181,7 +200,7 @@ function Operation({
           </div>
 
 
-          <button type="button" onClick={renderMatrix1}>gerar matriz A</button>
+          <button type="button" className="btn" onClick={renderMatrix1}>gerar matriz A</button>
           {error1 && <div className="error">Matriz inválida</div>}
 
           {release1 && <Matrix rows={row1} columns={column1} sequence="first" />}
@@ -215,7 +234,7 @@ function Operation({
             </div>
 
 
-            <button type="button" onClick={renderMatrix2}>gerar matriz B</button>
+            <button type="button" className="btn" onClick={renderMatrix2}>gerar matriz B</button>
 
             {error2 && <div className="error">{error2}</div>}
 
@@ -224,9 +243,9 @@ function Operation({
         )}
 
 
-        <div className="info">
-          <button type="button" onClick={calculate}>Calcular</button>
-
+        <div className="btns">
+          <button type="button" className="btn" onClick={calculate}>Calcular</button>
+          <button type="button" className="btn" onClick={clear}>Limpar</button>
         </div>
         {calc && (<div> Resultado</div>)}
         { result && (
