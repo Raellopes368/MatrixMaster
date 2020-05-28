@@ -81,15 +81,12 @@ function Main({ history }) {
       <div className="info-app">
         <img src={logo} alt="Logo" className="logo" />
         <div className="text">
-          <p>O app Matrix Master, foi feito para fazer cálculos simples de Matrizes.</p>
+          <p>O app Matrix Master foi feito para fazer cálculos simples de Matrizes.</p>
           <p>
             Para começar usar
-            é bem simples, clique sobre a operação desejada no menú ao lado, e será
+            é bem simples, clique sobre a operação desejada no menu ao lado, e será
             redirecionado para fazer as operações.
-
           </p>
-
-
         </div>
       </div>
 
