@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { connect } from 'react-redux';
@@ -7,6 +8,10 @@ import './styles.css';
 function Matrix({
   rows: qntdRows, columns: qntdColumns, dispatch, store, sequence,
 }) {
+  function getKey(object, key) {
+    const allKeys = Object.getOwnPropertyNames(object);
+    return allKeys.includes(key);
+  }
   function RenderMatrix() {
     if (qntdRows > 0 && qntdColumns > 0) {
       const rows = [];
@@ -19,7 +24,7 @@ function Matrix({
       }
       const matrix = {};
       function dispatchMatrix() {
-        if (matrix[`${rows.length}x${columns.length}`]) {
+        if (getKey(matrix, `${rows.length}x${columns.length}`)) {
           if (sequence === 'first') {
             dispatch({
               type: 'matrix1',
@@ -49,7 +54,13 @@ function Matrix({
                     onBlur={dispatchMatrix}
                     className={`column ${ind + 1}x${index + 1}`}
                     value={
-                      sequence === 'first' ? store.matrix1[`${ind + 1}x${index + 1}`] || matrix[`${ind + 1}x${index + 1}`] : store.matrix2[`${ind + 1}x${index + 1}`] || matrix[`${ind + 1}x${index + 1}`]
+                      sequence === 'first'
+                        ? getKey(store.matrix1, `${ind + 1}x${index + 1}`)
+                          ? store.matrix1[`${ind + 1}x${index + 1}`]
+                          : matrix[`${ind + 1}x${index + 1}`]
+                        : getKey(store.matrix2, `${ind + 1}x${index + 1}`)
+                          ? store.matrix2[`${ind + 1}x${index + 1}`]
+                          : matrix[`${ind + 1}x${index + 1}`]
 }
 
                     onChange={(e) => {
@@ -61,7 +72,6 @@ function Matrix({
               </div>
             ))}
             <div className="right" />
-
           </form>
 
         </div>

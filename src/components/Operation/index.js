@@ -50,10 +50,12 @@ function Operation({
       const matrix1 = generateMatrix(store.matrix1);
       const matrix2 = generateMatrix(store.matrix2);
 
+      console.log({ matrix1: store.matrix1, matrix2: store.matrix2 });
 
       if (matrix1.length && matrix2.length) {
         if (option === 'sum') {
           const resultAll = sum(matrix1, matrix2);
+          console.log({ resultAll });
           setCalc(true);
           setResult(resultAll);
         }

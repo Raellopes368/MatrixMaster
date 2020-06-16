@@ -11,11 +11,11 @@ function Result({ matrix }) {
       <div className="container-all">
         <form className="container-rows">
           <div className="left" />
-          {matrix.map((columns, ind) => (
+          {matrix.map((columns) => (
             <div className="teste">
-              <div className="container-columns" key={ind}>
-                {columns.map((col, index) => (
-                  <input type="text" className="column" readOnly value={col} key={index} />
+              <div className="container-columns" key={Math.random()}>
+                {columns.map((col) => (
+                  <input type="text" className="column" readOnly value={col} key={Math.random()} />
                 ))}
               </div>
             </div>
